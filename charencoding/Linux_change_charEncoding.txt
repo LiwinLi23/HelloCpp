@@ -1,0 +1,46 @@
+nux上遇到string为汉字时，需要转码存入到数据库中，将转码的函数及其方法记录一下。
+见函数：
+ 头文件是#include <iconv.h>
+[cpp] view plain copy
+    //fromcode:源string使用的字符集，如"UTF-8";，对于汉字每个汉字为3个字节存储  
+    //tocode:目的string使用的字符集，如"GB2312";，对于汉字每个汉字为2个字节存储  
+    //in:需要转码的字符串  
+    //out:转码后的字符串  
+    int iconv_code(const string& fromcode, const string& tocode, const string& in, string& out)  
+    {     
+        char *sin, *sout;  
+        size_t lenin, lenout;  
+        int ret;  
+        iconv_t c_pt;  
+  
+        if ((c_pt = iconv_open(tocode.c_str(), fromcode.c_str())) == (iconv_t)(-1)){  
+            out=in;  
+            return -1;  
+        }  
+          
+        lenin = in.size()+1;//字符串要有个结束符位  
+        char* oldPasserName = new char[lenin];//这里oldPasserName为工作中用的名字，没什么特殊含义  
+        strcpy(oldPasserName, in.c_str());  
+          
+        lenout = lenin*10;  
+        char* newPasserName = new char[lenout];  
+  
+        sin = oldPasserName;  
+        sout = newPasserName;  
+        ret = iconv(c_pt, &sin, &lenin, &sout, &lenout);  
+        if(ret == -1){  
+            out=in;  
+            iconv_close(c_pt);  
+            return -1;  
+        }  
+        iconv_close(c_pt);  
+          
+        out = newPasserName;  
+        delete []oldPasserName;//别忘记释放掉  
+        delete []newPasserName;  
+        return 0;  
+    }  
+ 
+闲话：
+       为什么需要转码呢，一般情况下，数据库使用GBK字符集存储，而有使用UTF-8的字符集字符串会传入应用程序，这时容易发生问题，但假如应用程序环境变量是UTF-8的，数据库如Oracle知道你传的是UTF-8字符串，它会自动帮你转码，这样不会有问题；但环境变量标明是GBK的，而应用程序传入UTF-8的汉字，那么orale会存储乱码，因为你欺骗了oracle。所以出现“欺骗”的情形时需要转码，注意自己程序是否会欺骗数据库。
+        同时，这个iconv函数是操作系统自己开发的库函数，而不是c++标准的，具体使用方式有可能依据系统不同而不同，我的环境是linux，所以各种linux发行版一般不会出现问题。

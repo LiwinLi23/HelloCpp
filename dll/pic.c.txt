@@ -1,0 +1,14 @@
+extern int b;
+extern void ext();
+
+static int a;
+
+void bar() {
+    a = 1;      // Inner-module data access
+    b = 2;      // Inter-module data access
+}
+
+void foo() {
+    bar();      // Inner-module call
+    ext();      // Inter-module call
+}
