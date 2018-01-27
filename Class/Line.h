@@ -45,7 +45,7 @@ void Line::testLine() {
 }
 
 void Line::testObjParameter() {
-	Point p(0, 0);
+	Point p(1, 1);
 	_testObjParameter(p);
 }
 

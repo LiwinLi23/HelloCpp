@@ -19,7 +19,8 @@
 
 // #include "basic/Array/LTArray.h"
 // #include "macro/LT-macro.h"
-#include "Class/Line.h" 
+// #include "Class/Line.h" 
+#include "Class/ClassTest.h"
 
 #include <iostream>
 using namespace std;
@@ -45,7 +46,10 @@ int main() {
 	
 	// LT_test_macro();
     // Line::testLine();
-	Line::testObjParameter();
+	// Line::testObjParameter();
+    
+    // class_test_funcWithObjparam();
+    ClassTest_test();
 	return 0;
 }
 
