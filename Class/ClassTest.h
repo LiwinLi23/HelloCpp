@@ -18,7 +18,8 @@ Point returnObject() {
 }
 
 void ClassTest_test() {
-	Point p = returnObject();
+	Point p;
+	p = returnObject();
 }
 
 
