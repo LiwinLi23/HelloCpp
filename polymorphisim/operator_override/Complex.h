@@ -12,6 +12,10 @@ public:
     LTComplex operator- (const LTComplex &c2) const;
     void display() const;
 
+    friend LTComplex operator+ (const LTComplex &c1, const LTComplex &c2);
+    friend LTComplex operator- (const LTComplex &c1, const LTComplex &c2);
+    friend ostream& operator<< (ostream &out, const LTComplex &c);
+
     static void test() {
         LTComplex c1(5, 4), c2(2, 10), c3;
         cout << "c1: "; c1.display();
@@ -36,3 +40,26 @@ LTComplex LTComplex::operator- (const LTComplex &c2) const {
 void LTComplex::display() const {
     cout << mReal << ", " << mImag << endl;
 }
+
+LTComplex operator+ (const LTComplex &c1, const LTComplex &c2) {
+    return LTComplex(c1.mReal + c2.mReal, c1.mImag + c2.mImag);
+}
+
+LTComplex operator- (const LTComplex &c1, const LTComplex &c2) {
+    return LTComplex(c1.mReal - c2.mReal, c1.mImag - c2.mImag);
+}
+
+ostream& operator<< (ostream &out, const LTComplex &c) {
+    out << c.mReal << ", " << c.mImag << endl;
+    return out;
+}
+
+
+
+
+
+
+
+
+
+
