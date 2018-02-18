@@ -10,7 +10,7 @@
 //#include "struct/LTStruct.h"
 //#include "struct/LTInitStruct.h"
 //#include "basic/BuildinTypes/BoolType.h"
-#include "./basic/BuildinTypes/CharType.h"
+//#include "./basic/BuildinTypes/CharType.h"
 //#include "basic/initialization/CurlyBraceDelimitedList.h"
 //#include "basic/Constants/Constants.h"
 // #include "memory/ltmemory.h"
@@ -20,7 +20,8 @@
 // #include "macro/LT-macro.h"
 // #include "Class/Line.h" 
 // #include "Class/ClassTest.h"
-
+// #include "./polymorphisim/Complex.h"
+// #include "./polymorphisim/operator_override/PreAddOrSubAdd.h"
 #include <iostream>
 using namespace std;
 
@@ -34,7 +35,7 @@ int main() {
 	// test_struct_size();
 	// init_struct();
 	// testBoolType();
-    testCharType();
+    // testCharType();
 	// (void)testInitialization();
 	// testConstantExpression();
 
@@ -50,6 +51,8 @@ int main() {
     
     // class_test_funcWithObjparam();
     // ClassTest_test();
+
+    // LTComplex::test();
 	return 0;
 }
 
