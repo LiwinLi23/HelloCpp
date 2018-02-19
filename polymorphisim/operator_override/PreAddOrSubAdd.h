@@ -8,6 +8,11 @@ public:
     Clock& operator++();        // Prefix add
     Clock  operator++(int);     // Subfix add
     void showTime() const;
+    static void test() {
+        Clock c1; c1.showTime();
+        ++c1; c1.showTime();
+        c1++; c1.showTime();
+    }
 
 private:
     int mHour, mMimute, mSecond;

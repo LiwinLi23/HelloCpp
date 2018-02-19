@@ -20,8 +20,8 @@
 // #include "macro/LT-macro.h"
 // #include "Class/Line.h" 
 // #include "Class/ClassTest.h"
-// #include "./polymorphisim/Complex.h"
-// #include "./polymorphisim/operator_override/PreAddOrSubAdd.h"
+#include "./polymorphisim/operator_override/Complex.h"
+#include "./polymorphisim/operator_override/PreAddOrSubAdd.h"
 #include <iostream>
 using namespace std;
 
@@ -52,7 +52,8 @@ int main() {
     // class_test_funcWithObjparam();
     // ClassTest_test();
 
-    // LTComplex::test();
+    LTComplex::test();
+    // Clock::test();
 	return 0;
 }
 
