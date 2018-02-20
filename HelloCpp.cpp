@@ -22,6 +22,7 @@
 // #include "Class/ClassTest.h"
 #include "./polymorphisim/operator_override/Complex.h"
 #include "./polymorphisim/operator_override/PreAddOrSubAdd.h"
+#include "./polymorphisim/virtual/virtual.h"
 #include <iostream>
 using namespace std;
 
@@ -52,8 +53,9 @@ int main() {
     // class_test_funcWithObjparam();
     // ClassTest_test();
 
-    LTComplex::test();
+    // LTComplex::test();
     // Clock::test();
+    Virtual::test();
 	return 0;
 }
 
