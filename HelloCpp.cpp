@@ -20,9 +20,10 @@
 // #include "macro/LT-macro.h"
 // #include "Class/Line.h" 
 // #include "Class/ClassTest.h"
-#include "./polymorphisim/operator_override/Complex.h"
-#include "./polymorphisim/operator_override/PreAddOrSubAdd.h"
-#include "./polymorphisim/virtual/virtual.h"
+// #include "./polymorphisim/operator_override/Complex.h"
+// #include "./polymorphisim/operator_override/PreAddOrSubAdd.h"
+// #include "./polymorphisim/virtual/virtual.h"
+#include "./polymorphisim/RTTI/TypeID.h"
 #include <iostream>
 using namespace std;
 
@@ -32,7 +33,7 @@ void LT_foo() {
 }
 
 int main() {
-    cout << "Hello, CPP" << endl;
+    // cout << "Hello, CPP" << endl;
 	// test_struct_size();
 	// init_struct();
 	// testBoolType();
@@ -55,7 +56,8 @@ int main() {
 
     // LTComplex::test();
     // Clock::test();
-    Virtual::test();
+    // Virtual::test();
+    TypeID::test();
 	return 0;
 }
 
