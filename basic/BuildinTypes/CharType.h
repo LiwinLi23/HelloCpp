@@ -11,6 +11,12 @@ void testCharType(void) {
     signed char* psc    = pc;
     unsigned char* puc  = pc;
     psc                 = puc;
+
+    cout << "Values outside that range [0, 127] stored in a plain char can \
+             lead to suble portability problems" << endl;
+    cout << "It's implementation-defined whether a plain char is considered \
+             signed or unsigned, This opens posibility for some nasty surprises\
+              and implementation dependencies." << endl;
 }
 
 
