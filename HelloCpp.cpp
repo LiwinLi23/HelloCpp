@@ -10,7 +10,7 @@
 //#include "struct/LTStruct.h"
 //#include "struct/LTInitStruct.h"
 //#include "basic/BuildinTypes/BoolType.h"
-//#include "./basic/BuildinTypes/CharType.h"
+#include "./basic/BuildinTypes/CharType.h"
 //#include "basic/initialization/CurlyBraceDelimitedList.h"
 //#include "basic/Constants/Constants.h"
 // #include "memory/ltmemory.h"
@@ -37,7 +37,7 @@ int main() {
 	// test_struct_size();
 	// init_struct();
 	// testBoolType();
-    // testCharType();
+    testCharType();
 	// (void)testInitialization();
 	// testConstantExpression();
 
@@ -57,7 +57,7 @@ int main() {
     // LTComplex::test();
     // Clock::test();
     // Virtual::test();
-    TypeID::test();
+    // TypeID::test();
 	return 0;
 }
 
