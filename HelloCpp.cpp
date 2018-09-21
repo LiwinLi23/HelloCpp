@@ -7,20 +7,19 @@
 //============================================================================
 
 //#include "./../struct/LTStruct.h"
-/*
-#include "struct/LTStruct.h"
-#include "struct/LTInitStruct.h"
-#include "basic/BuildinTypes/BoolType.h"
-#include "basic/initialization/CurlyBraceDelimitedList.h"
-#include "basic/Constants/Constants.h"
-*/
+//#include "struct/LTStruct.h"
+//#include "struct/LTInitStruct.h"
+//#include "basic/BuildinTypes/BoolType.h"
+#include "./basic/BuildinTypes/CharType.h"
+//#include "basic/initialization/CurlyBraceDelimitedList.h"
+//#include "basic/Constants/Constants.h"
 // #include "memory/ltmemory.h"
 // #include "basic/static_assert/StaticAssert.h"
 
 // #include "basic/Array/LTArray.h"
 // #include "macro/LT-macro.h"
 // #include "Class/Line.h" 
-#include "Class/ClassTest.h"
+// #include "Class/ClassTest.h"
 
 #include <iostream>
 using namespace std;
@@ -35,6 +34,7 @@ int main() {
 	// test_struct_size();
 	// init_struct();
 	// testBoolType();
+    testCharType();
 	// (void)testInitialization();
 	// testConstantExpression();
 
@@ -49,7 +49,7 @@ int main() {
 	// Line::testObjParameter();
     
     // class_test_funcWithObjparam();
-    ClassTest_test();
+    // ClassTest_test();
 	return 0;
 }
 
