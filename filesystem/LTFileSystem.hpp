@@ -9,6 +9,9 @@
 #ifndef LTFileSystem_hpp
 #define LTFileSystem_hpp
 
+#include <stddef.h>
+
 void LTListPath(const char* path);
+void showFileContent(const char* fileName = NULL);
 
 #endif /* LTFileSystem_hpp */

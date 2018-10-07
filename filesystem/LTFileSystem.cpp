@@ -26,3 +26,23 @@ void LTListPath(const char* path) {
     
     closedir(targetDir);
 }
+
+void showFileContent(const char* fileName) {
+    if (!fileName)
+        fileName = "/Volumes/LT_SD0/5.ts";
+
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
