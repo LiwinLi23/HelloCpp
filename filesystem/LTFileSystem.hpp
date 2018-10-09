@@ -12,6 +12,5 @@
 #include <stddef.h>
 
 void LTListPath(const char* path);
-void showFileContent(const char* fileName = NULL);
 
 #endif /* LTFileSystem_hpp */

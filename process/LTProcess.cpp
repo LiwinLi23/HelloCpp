@@ -11,15 +11,27 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/signal.h>
 
 using namespace std;
 
 #define BUF_LEN         1024
 
+static void LTIntteruptCallback(int) {
+    for (int i = 0; i < __INT32_MAX__; ++i)
+        cout << "LTIntterupt cb" << endl;
+    
+    sleep(3000);
+}
+
 void LTShell(void) {
     uint8_t cmdBuf[BUF_LEN];
     pid_t pid;
     int status;
+    
+    if (SIG_ERR == signal(SIGINT, LTIntteruptCallback))
+        cout << "Signal error" << endl;
+    
     cout << "LT$: ";
     while (NULL != fgets((char*)cmdBuf, BUF_LEN, stdin)) {
         if ('\n' == cmdBuf[strlen((char*)cmdBuf) - 1]) {
@@ -41,7 +53,4 @@ void LTShell(void) {
         
         cout << "LT$: ";
     }
-    
-    
-    
 }
